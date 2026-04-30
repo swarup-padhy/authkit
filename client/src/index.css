@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+
+  /* ═══════════════════════════════════════════════════
+     PRIMITIVES  —  raw values, never used directly in
+     components. Reference via semantic tokens below.
+  ═══════════════════════════════════════════════════ */
+
+  /* Gray scale */
+  --gray-900: #0d0d0d;
+  --gray-850: #111111;
+  --gray-800: #161616;
+  --gray-780: #181818;
+  --gray-750: #1a1a1a;
+  --gray-700: #222222;
+  --gray-650: #2a2a2a;
+  --gray-600: #333333;
+  --gray-500: #404040;
+  --gray-400: #555555;
+  --gray-300: #888888;
+  --gray-100: #a8a8a8;
+  --gray-0:   #ffffff;
+
+  /* Semantic status */
+  --raw-error:   #f87171;
+  --raw-success: #4ade80;
+  --raw-warning: #fb923c;
+  --raw-info:    #60a5fa;
+
+
+  /* ═══════════════════════════════════════════════════
+     SEMANTIC TOKENS  —  these are what components use
+  ═══════════════════════════════════════════════════ */
+
+  /* ─── Backgrounds ──────────────────────────────── */
+  --bg-base:      var(--gray-900); 
+  --bg-primary:   var(--gray-850);   
+  --bg-secondary: var(--gray-750);   
+
+  /* ─── Surfaces (layered elevation) ────────────── */
+  --surface-1: var(--gray-800);     
+  --surface-2: var(--gray-780);     
+  --surface-3: var(--gray-700);     
+
+  /* ─── Text ─────────────────────────────────────── */
+  --text-primary:   var(--gray-0);
+  --text-secondary: var(--gray-300);
+  --text-muted:     var(--gray-400);
+  --text-code:      var(--gray-100);
+  --text-inverse:   #000000;
+
+  /* ─── Borders ──────────────────────────────────── */
+  --border-subtle:  var(--gray-700);
+  --border-default: var(--gray-650);
+  --border-hover:   var(--gray-500);
+  --border-strong:  var(--gray-300);
+  --border-code:    var(--gray-600);
+
+  /* ─── Status ───────────────────────────────────── */
+  --color-error:          var(--raw-error);
+  --color-error-bg:       rgba(248, 113, 113, 0.12);
+  --color-success:        var(--raw-success);
+  --color-success-bg:     rgba(74, 222, 128, 0.12);
+  --color-warning:        var(--raw-warning);
+  --color-warning-bg:     rgba(251, 146, 60, 0.12);
+  --color-info:           var(--raw-info);
+  --color-info-bg:        rgba(96, 165, 250, 0.12);
+
+  /* ─── Accent ────────────────────────────────────── */
+  --raw-accent:       #6c63ff;
+  --color-accent:     var(--raw-accent);
+  --color-accent-dim: rgba(108, 99, 255, 0.3);
+
+  /* ─── Buttons ──────────────────────────────────── */
+  --btn-primary-bg:       var(--gray-0);
+  --btn-primary-text:     var(--text-inverse);
+  --btn-primary-hover:    #e6e6e6;
+  --btn-secondary-bg:     transparent;
+  --btn-secondary-border: var(--border-default);
+  --btn-secondary-hover:  rgba(255, 255, 255, 0.05);
+
+  /* ─── Inputs ───────────────────────────────────── */
+  --input-bg:           var(--surface-1);
+  --input-border:       var(--border-default);
+  --input-border-focus: var(--gray-500);
+  --input-padding:      12px 16px;
+  --input-font-size:    var(--text-base);
+  --input-radius:       var(--radius-lg);
+  --input-transition:   border-color var(--duration-base) var(--ease-default),
+                        box-shadow   var(--duration-base) var(--ease-default),
+                        transform    var(--duration-base) var(--ease-default);
+  --focus-ring-gap:         2px;
+  --focus-ring-width:       4px;
+  --focus-ring-color:       rgba(255, 255, 255, 0.15);
+  --error-container-height: 24px;
+
+
+  /* ═══════════════════════════════════════════════════
+     TYPOGRAPHY
+  ═══════════════════════════════════════════════════ */
+
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* Size scale */
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 14px;
+  --text-md:   16px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  30px;
+  --text-3xl:  36px;
+
+  /* Weight */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold:   600;
+
+  /* Tracking */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.05em;
+  --tracking-widest:  0.12em;
+
+  /* Leading */
+  --leading-none:   1;
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-base:   1.5;
+  --leading-loose:  1.65;
+
+
+  /* ═══════════════════════════════════════════════════
+     SPACING  (4pt grid, no gaps)
+  ═══════════════════════════════════════════════════ */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+
+
+  /* ═══════════════════════════════════════════════════
+     BORDER RADIUS
+  ═══════════════════════════════════════════════════ */
+
+  --radius-none: 0;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-2xl:  16px;
+  --radius-pill: 9999px;
+  --radius-full: 50%;
+
+
+  /* ═══════════════════════════════════════════════════
+     SHADOWS
+  ═══════════════════════════════════════════════════ */
+
+  --shadow-sm:          0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md:          0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:          0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-inset:       inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-logo:        inset 0 1px 1px rgba(255,255,255,0.05), 0 4px 20px rgba(0,0,0,0.5);
+  --shadow-btn-primary: 0 2px 12px rgba(255, 255, 255, 0.12);
+  --shadow-accent:      0 0 20px var(--color-accent-dim);
+
+
+  /* ═══════════════════════════════════════════════════
+     ANIMATION
+  ═══════════════════════════════════════════════════ */
+
+  --duration-instant: 0.05s;
+  --duration-fast:    0.15s;
+  --duration-base:    0.2s;
+  --duration-slow:    0.3s;
+  --duration-slower:  0.45s;
+  --duration-lazy:    0.6s;
+
+  --ease-default:     ease;
+  --ease-in:          ease-in;
+  --ease-out:         ease-out;
+  --ease-spring:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-expo-out:    cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Reusable transition shorthands */
+  --transition-colors: color var(--duration-base) var(--ease-default),
+                       background-color var(--duration-base) var(--ease-default),
+                       border-color var(--duration-base) var(--ease-default);
+  --transition-shadow: box-shadow var(--duration-base) var(--ease-default);
+  --transition-transform: transform var(--duration-base) var(--ease-spring);
+  --transition-all: all var(--duration-base) var(--ease-default);
+
+  /* Backward compat aliases */
+  --btn-transition: var(--transition-colors), var(--transition-shadow);
+
+
+  /* ═══════════════════════════════════════════════════
+     Z-INDEX  —  named layers, never magic numbers
+  ═══════════════════════════════════════════════════ */
+
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;    /* cards, dropdowns     */
+  --z-overlay:  20;    /* drawers, side panels */
+  --z-modal:    30;    /* dialogs              */
+  --z-toast:    40;    /* alerts, toasts       */
+  --z-top:      50;    /* tooltips, popovers   */
+
+
+  /* ═══════════════════════════════════════════════════
+     LAYOUT
+  ═══════════════════════════════════════════════════ */
+
+  --card-max-width:      400px;
+  --card-padding:        var(--space-7);
+  --dashboard-max-width: 1200px;
+  --dashboard-padding:   var(--space-8);
+  --content-max-width:   1200px;
+
+  /* ─── Component: Logo ──────────────────────────── */
+  --logo-size-lg:  64px;
+  --logo-img-lg:   32px;
+  --logo-size-sm:  48px;
+  --logo-img-sm:   24px;
+
+  /* ─── Component: Button ────────────────────────── */
+  --btn-padding:          var(--space-3);
+  --btn-radius:           var(--radius-lg);
+  --btn-font-size:        var(--text-base);
+  --btn-font-weight:      var(--font-medium);
+  --btn-spinner-size:     16px;
+  --btn-disabled-opacity: 0.5;
+}
+
+
+/* ─── Reset ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-gutter: stable;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
+
+
+/* ─── Sonar Alert ───────────────────────────────────── */
+.sonar-alert {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  z-index: var(--z-toast);
+  animation: slideDownFade var(--duration-slower) var(--ease-spring) forwards;
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.sonar-icon {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sonar-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  position: relative;
+  z-index: var(--z-raised);
+}
+
+.sonar-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  z-index: var(--z-base);
+  animation: sonarPulse 1.5s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes sonarPulse {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
+}
+
+/* ─── Page Container ────────────────────────────────── */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #000000 0%, var(--bg-base) 100%);
+}
+
+.page-container > * {
+  position: relative;
+  z-index: var(--z-raised);
+}

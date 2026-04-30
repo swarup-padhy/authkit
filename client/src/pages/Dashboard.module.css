@@ -1,0 +1,86 @@
+.dashboardPage {
+  padding: var(--dashboard-padding);
+  max-width: var(--dashboard-max-width);
+  margin: 0 auto;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.welcomeText {
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  text-align: left;
+}
+
+.dashboardCard {
+  background: var(--surface-1);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-7);
+  transition: transform var(--duration-slow) var(--ease-spring),
+              box-shadow var(--duration-slow);
+}
+
+.dashboardCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.infoItem {
+  margin-bottom: var(--space-4);
+}
+
+.infoLabel {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.infoValue {
+  font-size: var(--text-md);
+  color: var(--text-primary);
+}
+
+.codeBlock {
+  background: var(--bg-base);
+  border: 1px solid var(--border-code);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--text-code);
+  font-family: var(--font-mono);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.logoContainer {
+  width: var(--logo-size-sm);
+  height: var(--logo-size-sm);
+  background: var(--surface-2);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-logo);
+  border: 1px solid var(--border-subtle);
+  transition: transform var(--duration-slower) var(--ease-spring);
+}
+
+.logoContainer:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.logoImage {
+  width: var(--logo-img-sm);
+  height: var(--logo-img-sm);
+  object-fit: contain;
+}
